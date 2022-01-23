@@ -8,8 +8,8 @@ useEffect(
     () => {
         fetch("http://localhost:8088/employees")
             .then (res => res.json())
-            .then((data) => {
-                assignEmployees(data)
+            .then((empoyeesFromAPI) => {
+                assignEmployees(empoyeesFromAPI)
             })
     },
     []
@@ -28,7 +28,7 @@ return (
         {
             employees.map(
                 (employee) => {
-                    return <p key={`employee--${employee.id}`}>{employee.name}</p>
+                    return <h3 key={`employee--${employee.id}`}>{employee.name}</h3>
                 }
             )
         }
