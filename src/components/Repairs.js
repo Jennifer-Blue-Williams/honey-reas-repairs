@@ -1,15 +1,33 @@
-import React from "react"
-import { CustomerList } from "./customers/CustomersList";
-import { EmployeeList } from "./employees/EmployeeList";
+import React from "react";
+import { Route, Redirect } from "react-router-dom";
+import { ApplicationViews } from "./ApplicationViews";
+import { NavBar } from "./nav/NavBar";
+import { Login } from "./auth/Login";
+import { Register } from "./auth/Register";
+import "./Repairs.css";
 
-export const Repairs = () => {
-    return (
-    <>
-        <h1>Honey Rea's Repair Shop</h1>
-        <h1>Customer List</h1>
-        <CustomerList />
-        <h1>Employee List</h1>
-        <EmployeeList />
-    </>
-    )
-}
+export const Repairs = () => (
+  <>
+    <Route
+      render={() => {
+        if (localStorage.getItem("honey_customer")) {
+          return (
+            <>
+              <NavBar />
+              <ApplicationViews />
+            </>
+          );
+        } else {
+          return <Redirect to="/login" />;
+        }
+      }}
+    />
+
+    <Route path="/login">
+      <Login />
+    </Route>
+    <Route path="/register">
+      <Register />
+    </Route>
+  </>
+);
