@@ -4,7 +4,6 @@ import { CustomerList } from "./customers/CustomersList";
 import { EmployeeList } from "./employees/EmployeeList";
 import { TicketForm } from "./serviceTickets/TicketForm";
 import { TicketList } from "./serviceTickets/TicketList";
-import { TicketForm } from "./serviceTickets/TicketForm";
 
 export const ApplicationViews = () => {
     return (
