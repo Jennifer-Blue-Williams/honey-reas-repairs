@@ -22,15 +22,15 @@ export const TicketForm = () => {
                         required autoFocus
                         type="text" id="description"
                         className="form-control" />
-                        // placeholder="Brief description of problem" 
-                        // onChange={} /
+                        {/* // placeholder="Brief description of problem" 
+                        // onChange={} / */}
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="name">Emergency:</label>
                     <input type="checkbox" />
-                        // onChange={} /
+                        {/* // onChange={} / */}
                 </div>
             </fieldset>
             <button className="btn btn-primary" onClick={saveTicket}>
